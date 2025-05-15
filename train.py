@@ -17,14 +17,12 @@ def train(neural_network, x_train, y_train):
 
     full_dataset = TensorDataset(x_train, y_train)
 
-    # Split into training and validation
     total_size = len(full_dataset)
     val_size = int(total_size * validationSplit)
     train_size = total_size - val_size
 
     train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
 
-    # Dataloaders
     train_dataloader = DataLoader(train_dataset, batch_size=batchSize, shuffle=True)
     val_dataloader = DataLoader(val_dataset, batch_size=batchSize, shuffle=False)
 

@@ -2,7 +2,6 @@ from config import config_data
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import numpy as np
 
 pd.set_option("future.no_silent_downcasting", True)
 

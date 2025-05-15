@@ -1,5 +1,3 @@
-# define hyperparameters
-
 config_data = {
     "dataSet": "./firewall_data.csv",
     "numberOfIndependentVariables": 11,
