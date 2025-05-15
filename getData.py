@@ -22,7 +22,12 @@ def get_class_label_row(dataSet):
 
 def get_splitted_train_test_data(x,y):
     trainTestSplitRatio = config_data["trainTestSplitRatio"]
-    X_train, X_test, y_train, y_test = train_test_split(x,y, test_size=trainTestSplitRatio, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(
+        x,
+        y, 
+        test_size=trainTestSplitRatio, 
+        random_state=0
+    )
     return X_train, X_test, y_train, y_test
 
 

@@ -1,11 +1,6 @@
-import numpy as np
-import pandas as pd
+
 import torch
 import torch.nn as nn
-import torch.nn.functional as activationFunction
-import matplotlib.pyplot as plt
-from torch.utils.data import TensorDataset, DataLoader
-from sklearn.model_selection import train_test_split
 from config import config_data
 
 # Configuration

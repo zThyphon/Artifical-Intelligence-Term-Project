@@ -11,8 +11,6 @@ def test(neural_network, x_test, y_test):
 
     neural_network.eval()
 
-    print("Testing Started")
-
     test_dataset = TensorDataset(x_test, y_test)
     test_loader = DataLoader(test_dataset, batch_size=batchSize)
 
@@ -39,7 +37,10 @@ def test(neural_network, x_test, y_test):
                 actual_label = getData.get_class_label(actual_class)
                 predicted_label = getData.get_class_label(predicted_class)
 
-                print(f"{batch_idx*batchSize + i + 1}) Actual Class: {actual_label} \tPredicted Class: {predicted_label}")
+                print(f"""
+                    {batch_idx*batchSize + i + 1}) 
+                      Actual Class: {actual_label} \t
+                      Predicted Class: {predicted_label}""")
 
                 if actual_class == predicted_class:
                     correct += 1

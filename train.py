@@ -13,7 +13,11 @@ def train(neural_network, x_train, y_train):
     validationSplit = config_data["validationSplit"]
     weightDecay = config_data["weightDecay"]
 
-    optimizationFunction = torch.optim.Adam(neural_network.parameters(), lr=learningRate, weight_decay=weightDecay)
+    optimizationFunction = torch.optim.Adam(
+        neural_network.parameters(), 
+        lr=learningRate, 
+        weight_decay=weightDecay
+    )
 
     full_dataset = TensorDataset(x_train, y_train)
 
@@ -63,5 +67,5 @@ def train(neural_network, x_train, y_train):
         print(f"Epoch: {epoch+1}/{numberOfEpochs}, "
               f"Training Loss: {average_loss:.4f}, Validation Loss: {average_val_loss:.4f}")
 
-    chart.draw(numberOfEpochs, losses, "Training Loss", "Epochs", "Loss")
-    chart.draw(numberOfEpochs, val_losses, "Validation Loss", "Epochs", "Loss")
+    chart.draw(numberOfEpochs, losses, "Training Loss", "Epochs", "Training Loss / Epochs")
+    chart.draw(numberOfEpochs, val_losses, "Validation Loss", "Epochs", "Validation Loss / Epochs")
